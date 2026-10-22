@@ -21,7 +21,8 @@ src/               Editable source (images use the {{ASSET_BASE}} token)
 dist/              PASTE THESE into GHL (same files, real image URLs filled in)
 preview/           Full-page previews — open in a browser to see each page
 build.py           Rebuilds dist/ and preview/ after you edit src/
-config.json        asset_base = where the logo files are hosted
+config.json        asset_base = where the logo files are hosted (jsDelivr, pinned to a commit so caches never go stale;
+                   after changing a logo, commit it, then update the commit hash here and rebuild)
 ```
 
 ## Setting it up in GHL
@@ -82,3 +83,11 @@ Confirm these statements are true before publishing (they're new copy):
 Edit files in `src/`, then run `python3 build.py` and re-paste the changed block from `dist/`.
 All CSS classes start with `bca-` so they can't collide with GHL's styles. Colors and fonts
 are variables at the top of `src/global/head.html`.
+
+## Known follow-ups
+
+- **Spotlight articles** still live on the old Webflow site (best-of-the-city-awards-6f55f4.webflow.io).
+  The Featured Businesses cards link there and open in a new tab. Keep that Webflow site up until the
+  articles are moved into GHL (Sites > Blogs), then point the links in `src/pages/home/04-featured.html`
+  and `src/pages/free-sedona-spotlight/03-previous-feature.html` at the new posts.
+- **Form footer links** ("Privacy Policy | Terms of Service") in both GHL forms use GHL defaults; set real URLs.
