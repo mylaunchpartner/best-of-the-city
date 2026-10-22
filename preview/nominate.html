@@ -164,6 +164,9 @@
 .bca-contact__label{display:block;font:600 11.5px/1.4 var(--bca-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--bca-muted)}
 .bca-formslot{background:#fff;border:1px solid var(--bca-line);padding:32px;min-height:420px}
 .bca-formslot iframe{width:100%;border:0;min-height:560px}
+.bca-formslot--live{padding:12px;min-height:0}
+.bca-formslot--live iframe{min-height:820px}
+#inline-9Oma63ESq2GpQSWtk55g{min-height:1100px}
 
 /* States */
 .bca-state{background:#fff;border:1px solid var(--bca-gold);padding:40px}
@@ -253,9 +256,7 @@
 </header>
 
 <main>
-<!-- BCA | Nominate (page slug: /nominate) — intro + GHL nomination form slot.
-     Replace the .bca-todo line inside .bca-formslot with your GHL form's embed code
-     (Sites > Forms > your form > Integrate > Embed code), OR delete the slot and drop a native GHL form element right after this block. -->
+<!-- BCA | Nominate (page slug: /nominate) — intro, next steps and the embedded GHL nomination form. -->
 <section class="bca bca-hero" style="padding:88px 0 96px" aria-labelledby="bca-nom-title">
   <div class="bca-wrap">
     <span class="bca-eyebrow">Nominate a Business</span>
@@ -273,9 +274,10 @@
         <li><div><h3>The community votes</h3><p>Winners are decided by verified community voting. We'll let you know when voting opens.</p></div></li>
       </ol>
     </div>
-    <div class="bca-formslot">
-      <p><span class="bca-todo">[PASTE GHL NOMINATION FORM EMBED CODE HERE]</span></p>
-      <p class="bca-muted" style="font-size:14px">Suggested fields: your name, your email, business name, business city &amp; state, category, business website or social link, why they deserve it.</p>
+    <div class="bca-formslot bca-formslot--live">
+      <!-- GHL form: "BCA - Nominate a Business" (Sites > Forms). Edit fields there; this embed updates automatically. -->
+      <iframe src="https://api.leadconnectorhq.com/widget/form/9Oma63ESq2GpQSWtk55g" style="width:100%;height:100%;border:none;border-radius:3px" id="inline-9Oma63ESq2GpQSWtk55g" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="BCA - Nominate a Business" data-height="1100" data-layout-iframe-id="inline-9Oma63ESq2GpQSWtk55g" data-form-id="9Oma63ESq2GpQSWtk55g" title="Nominate a business"></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
   </div>
 </section>

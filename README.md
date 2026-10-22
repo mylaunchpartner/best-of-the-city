@@ -39,7 +39,8 @@ config.json        asset_base = where the logo files are hosted
 | Nominate *(new)* | `/nominate` | header, nominate/01, footer |
 | Cities | `/all-businesses-by-state` | header, cities/01, footer |
 | Contact | `/contact` | header, contact/01, footer |
-| Featured Businesses | `/featured-businesses` | header, home/04, home/07, footer |
+| Featured Businesses | `/featured-businesses` | header, featured-businesses/01, home/04, home/07, footer |
+| 404 | site's 404 page | header, not-found/01, footer |
 
 Existing slugs are kept so current links and search rankings carry over.
 
@@ -47,9 +48,8 @@ Existing slugs are kept so current links and search rankings carry over.
 section and footer) for ONE Code element in a single full-width, 0-padding section. The
 Home page in GHL is built this way.
 
-4. **Forms:** Nominate and Contact have a yellow form slot. Paste the GHL form's embed
-   code there (Sites > Forms > form > Integrate), or delete the slot and drop a native
-   GHL form element right after the block.
+4. **Forms:** Nominate and Contact embed GHL forms ("BCA - Nominate a Business" and
+   "BCA - Contact Us" in Sites > Forms). Edit the fields in GHL; the pages update on their own.
 
 ## Before going live — fill these in
 
@@ -58,7 +58,6 @@ Anything still needing a real value is wrapped in `<span class="bca-todo">` and 
 
 - `[VOTING OPEN DATE]` — home season bar
 - `[APPLICATION DEADLINE, incl. year]` — Free Spotlight hero and availability section (2 places)
-- `[PASTE GHL … FORM EMBED CODE HERE]` — Nominate and Contact
 
 Confirm these statements are true before publishing (they're new copy):
 
