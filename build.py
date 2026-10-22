@@ -20,7 +20,17 @@ PAGES = {
     "nominate": {"title": "Nominate",            "dir": "nominate",             "path": "/nominate"},
     "cities":  {"title": "Cities",               "dir": "cities",               "path": "/all-businesses-by-state"},
     "contact": {"title": "Contact",              "dir": "contact",              "path": "/contact"},
+    "featured-businesses": {"title": "Featured Businesses", "dir": "featured-businesses", "path": "/featured-businesses",
+                "blocks": ["featured-businesses/01-hero.html", "home/04-featured.html", "home/07-cta.html"]},
+    "not-found": {"title": "Page Not Found",     "dir": "not-found",            "path": "/404"},
 }
+
+
+def page_blocks(page):
+    """A page's section files in order: an explicit 'blocks' list, else every file in its folder."""
+    if "blocks" in page:
+        return [SRC / "pages" / b for b in page["blocks"]]
+    return sorted((SRC / "pages" / page["dir"]).glob("*.html"))
 
 
 def sub(text, base):
@@ -39,7 +49,7 @@ def build_dist(base):
     full.mkdir(parents=True, exist_ok=True)
     g = {n: sub((SRC / f"global/{n}.html").read_text(), base) for n in ("head", "header", "footer")}
     for key, page in PAGES.items():
-        blocks = sorted((SRC / "pages" / page["dir"]).glob("*.html"))
+        blocks = page_blocks(page)
         parts = [g["head"], g["header"]] + [sub(b.read_text(), base) for b in blocks] + [g["footer"]]
         (full / f"{page['dir']}.html").write_text(
             f"<!-- BCA | {page['title']} — FULL PAGE. Paste into ONE Code element in a full-width, 0-padding section. -->\n"
@@ -58,7 +68,7 @@ def build_preview(base, out_dir):
         for k, p in PAGES.items()
     )
     for key, page in PAGES.items():
-        blocks = sorted((SRC / "pages" / page["dir"]).glob("*.html"))
+        blocks = page_blocks(page)
         body = "\n".join(sub(b.read_text(), base) for b in blocks)
         html = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">

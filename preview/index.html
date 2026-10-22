@@ -9,14 +9,14 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap">
 <style>
 .bca,.bca *,.bca *::before,.bca *::after{box-sizing:border-box}
 .bca{
   --bca-ink:#151515;--bca-charcoal:#2B2B2B;--bca-gold:#C49A55;--bca-gold-deep:#835E1E;
   --bca-gold-soft:#E8D3A6;--bca-ivory:#FBF8F2;--bca-sand:#F3ECDF;--bca-line:#E3D9C7;
   --bca-muted:#5A534B;--bca-on-dark:#F4EFE6;--bca-on-dark-muted:#CBC3B5;
-  --bca-serif:'Bodoni Moda',Didot,'Bodoni 72','Times New Roman',serif;
+  --bca-serif:'Libre Baskerville',Baskerville,Georgia,'Times New Roman',serif;
   --bca-sans:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
   --bca-script:'Allura','Snell Roundhand',cursive;
   font-family:var(--bca-sans);font-size:17px;line-height:1.65;color:var(--bca-ink);
@@ -43,9 +43,9 @@
 /* Type */
 .bca-eyebrow{display:block;font:600 12px/1.4 var(--bca-sans);letter-spacing:.24em;text-transform:uppercase;color:var(--bca-gold-deep);margin:0 0 18px}
 .bca-section--dark .bca-eyebrow,.bca-hero .bca-eyebrow{color:var(--bca-gold)}
-.bca-h1{font-family:var(--bca-serif);font-weight:500;font-size:clamp(42px,6.2vw,78px);line-height:1.04;letter-spacing:-.01em;margin:0 0 24px}
-.bca-h2{font-family:var(--bca-serif);font-weight:500;font-size:clamp(34px,4.2vw,54px);line-height:1.08;margin:0 0 20px}
-.bca-h3{font-family:var(--bca-serif);font-weight:600;font-size:23px;line-height:1.25;margin:0 0 10px}
+.bca-h1{font-family:var(--bca-serif);font-weight:400;font-size:clamp(36px,5.2vw,64px);line-height:1.12;letter-spacing:-.015em;margin:0 0 24px}
+.bca-h2{font-family:var(--bca-serif);font-weight:400;font-size:clamp(30px,3.6vw,46px);line-height:1.16;letter-spacing:-.01em;margin:0 0 20px}
+.bca-h3{font-family:var(--bca-serif);font-weight:700;font-size:21px;line-height:1.25;margin:0 0 10px}
 .bca-lead{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--bca-muted);max-width:640px;margin:0 0 36px}
 .bca-section--dark .bca-lead,.bca-hero .bca-lead,.bca-cta .bca-lead{color:var(--bca-on-dark-muted)}
 .bca-muted{color:var(--bca-muted)}
@@ -117,14 +117,14 @@
 .bca-feature{display:flex;flex-direction:column;background:#fff;border:1px solid var(--bca-line);padding:32px 28px;text-decoration:none!important;height:100%;transition:border-color .2s,transform .2s}
 .bca-feature:hover{border-color:var(--bca-gold);transform:translateY(-3px)}
 .bca-feature__loc{font:600 11.5px/1.4 var(--bca-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--bca-gold-deep);margin:0 0 14px}
-.bca-feature__name{font-family:var(--bca-serif);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 12px;color:var(--bca-ink)}
+.bca-feature__name{font-family:var(--bca-serif);font-weight:700;font-size:21px;line-height:1.3;margin:0 0 12px;color:var(--bca-ink)}
 .bca-feature__tag{color:var(--bca-muted);font-size:15.5px;margin:0 0 24px;flex:1}
 .bca-feature__cta{font:600 12.5px/1 var(--bca-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--bca-ink)}
 
 /* Quote */
 .bca-quote{max-width:900px;margin:0 auto;text-align:center}
 .bca-quote__mark{font-family:var(--bca-serif);font-size:88px;line-height:1;height:44px;overflow:hidden;color:var(--bca-gold);display:block;margin:0 0 22px}
-.bca-quote blockquote{margin:0 0 30px;font-family:var(--bca-serif);font-size:clamp(24px,2.8vw,34px);line-height:1.4;font-weight:400}
+.bca-quote blockquote{margin:0 0 30px;font-family:var(--bca-serif);font-style:italic;font-size:clamp(21px,2.4vw,29px);line-height:1.5;font-weight:400}
 .bca-quote__who{font-weight:600;letter-spacing:.06em}
 .bca-quote__biz{display:block;color:var(--bca-on-dark-muted);font-size:15px;margin-top:4px}
 
@@ -144,14 +144,14 @@
 .bca-steps li{counter-increment:bca-step;display:grid;grid-template-columns:72px minmax(0,1fr);gap:24px;padding:26px 0;border-top:1px solid var(--bca-line)}
 .bca-steps li:last-child{border-bottom:1px solid var(--bca-line)}
 .bca-steps li::before{content:counter(bca-step,decimal-leading-zero);font-family:var(--bca-serif);font-size:38px;line-height:1;color:var(--bca-gold)}
-.bca-steps h3{font-family:var(--bca-serif);font-weight:600;font-size:22px;margin:0 0 6px}
+.bca-steps h3{font-family:var(--bca-serif);font-weight:700;font-size:19px;margin:0 0 6px}
 .bca-steps p{margin:0;color:var(--bca-muted)}
 .bca-note{background:#fff;border:1px solid var(--bca-gold);padding:18px 22px;margin-top:14px;font-size:15px;color:var(--bca-ink)}
 
 /* FAQ */
 .bca-faq{border-top:1px solid var(--bca-line)}
 .bca-faq details{border-bottom:1px solid var(--bca-line)}
-.bca-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font-family:var(--bca-serif);font-size:21px;font-weight:600;min-height:44px}
+.bca-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font-family:var(--bca-serif);font-size:19px;font-weight:700;min-height:44px}
 .bca-faq summary::-webkit-details-marker{display:none}
 .bca-faq summary::after{content:"+";font-family:var(--bca-sans);font-weight:400;font-size:28px;color:var(--bca-gold-deep);flex:0 0 auto;transition:transform .2s}
 .bca-faq details[open] summary::after{transform:rotate(45deg)}
@@ -221,7 +221,7 @@
 
 <style>body{margin:0;background:#FBF8F2}</style>
 </head><body>
-<div style="background:#000;color:#999;font:12px/1.4 Montserrat,system-ui,sans-serif;padding:10px 16px;text-align:center">PREVIEW ONLY &middot; <a href="index.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Home</a> <a href="free-sedona-spotlight.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Free Sedona Spotlight</a> <a href="nominate.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Nominate</a> <a href="cities.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Cities</a> <a href="contact.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Contact</a></div>
+<div style="background:#000;color:#999;font:12px/1.4 Montserrat,system-ui,sans-serif;padding:10px 16px;text-align:center">PREVIEW ONLY &middot; <a href="index.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Home</a> <a href="free-sedona-spotlight.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Free Sedona Spotlight</a> <a href="nominate.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Nominate</a> <a href="cities.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Cities</a> <a href="contact.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Contact</a> <a href="featured-businesses.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Featured Businesses</a> <a href="not-found.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Page Not Found</a></div>
 <!-- BCA | Global header — paste as the first Custom HTML element on every page (full-width section, 0 padding). -->
 <header class="bca bca-header">
   <div class="bca-wrap bca-header__row">
@@ -515,6 +515,6 @@
 </footer>
 
 <script>
-(function(){var r={"/": "index.html", "/free-sedona-business-interviews": "free-sedona-spotlight.html", "/nominate": "nominate.html", "/all-businesses-by-state": "cities.html", "/contact": "contact.html"};document.addEventListener('click',function(e){var a=e.target.closest('a[href^="/"]');if(!a)return;var h=a.getAttribute('href'),p=h.split('#')[0]||'/',f=r[p];if(f){e.preventDefault();location.href=f+(h.indexOf('#')>-1?h.slice(h.indexOf('#')):'');}});})();
+(function(){var r={"/": "index.html", "/free-sedona-business-interviews": "free-sedona-spotlight.html", "/nominate": "nominate.html", "/all-businesses-by-state": "cities.html", "/contact": "contact.html", "/featured-businesses": "featured-businesses.html", "/404": "not-found.html"};document.addEventListener('click',function(e){var a=e.target.closest('a[href^="/"]');if(!a)return;var h=a.getAttribute('href'),p=h.split('#')[0]||'/',f=r[p];if(f){e.preventDefault();location.href=f+(h.indexOf('#')>-1?h.slice(h.indexOf('#')):'');}});})();
 </script>
 </body></html>
