@@ -34,6 +34,16 @@ def build_dist(base):
         out = DIST / f.relative_to(SRC)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(sub(f.read_text(), base))
+    # One-paste versions: styles + header + every section + footer for a single Code element.
+    full = DIST / "full-page"
+    full.mkdir(parents=True, exist_ok=True)
+    g = {n: sub((SRC / f"global/{n}.html").read_text(), base) for n in ("head", "header", "footer")}
+    for key, page in PAGES.items():
+        blocks = sorted((SRC / "pages" / page["dir"]).glob("*.html"))
+        parts = [g["head"], g["header"]] + [sub(b.read_text(), base) for b in blocks] + [g["footer"]]
+        (full / f"{page['dir']}.html").write_text(
+            f"<!-- BCA | {page['title']} — FULL PAGE. Paste into ONE Code element in a full-width, 0-padding section. -->\n"
+            + "\n".join(parts))
     print(f"dist/ built with asset base: {base}")
 
 

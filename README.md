@@ -43,6 +43,10 @@ config.json        asset_base = where the logo files are hosted
 
 Existing slugs are kept so current links and search rankings carry over.
 
+**Faster option:** `dist/full-page/<page>.html` holds a whole page (styles, header, every
+section and footer) for ONE Code element in a single full-width, 0-padding section. The
+Home page in GHL is built this way.
+
 4. **Forms:** Nominate and Contact have a yellow form slot. Paste the GHL form's embed
    code there (Sites > Forms > form > Integrate), or delete the slot and drop a native
    GHL form element right after the block.
