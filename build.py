@@ -16,7 +16,7 @@ SRC, DIST, PREVIEW = ROOT / "src", ROOT / "dist", ROOT / "preview"
 # Page order = the order to stack embed blocks in GHL.
 PAGES = {
     "index":   {"title": "Home",                 "dir": "home",                 "path": "/"},
-    "free-sedona-spotlight": {"title": "Free Sedona Spotlight", "dir": "free-sedona-spotlight", "path": "/free-sedona-business-interviews"},
+    "free-business-spotlight": {"title": "Free Business Spotlight", "dir": "free-business-spotlight", "path": "/free-business-spotlight"},
     "nominate": {"title": "Nominate",            "dir": "nominate",             "path": "/nominate"},
     "cities":  {"title": "Cities",               "dir": "cities",               "path": "/all-businesses-by-state"},
     "contact": {"title": "Contact",              "dir": "contact",              "path": "/contact"},

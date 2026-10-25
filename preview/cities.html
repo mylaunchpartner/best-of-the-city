@@ -82,8 +82,6 @@
 .bca-card__num{display:block;font-family:var(--bca-serif);font-size:44px;line-height:1;color:var(--bca-gold);margin:0 0 22px}
 .bca-card__icon{width:44px;height:44px;color:var(--bca-gold-deep);margin:0 0 22px}
 
-/* Placeholder: anything wrapped in .bca-todo still needs a real value. Highly visible on purpose. */
-.bca-todo{background:#FFE58A;color:#3A2E00;padding:1px 7px;border-radius:2px;font-weight:600;font-style:normal}
 
 /* Header */
 .bca-header{background:var(--bca-ivory);border-bottom:1px solid var(--bca-line);position:relative;z-index:50}
@@ -224,7 +222,7 @@
 
 <style>body{margin:0;background:#FBF8F2}</style>
 </head><body>
-<div style="background:#000;color:#999;font:12px/1.4 Montserrat,system-ui,sans-serif;padding:10px 16px;text-align:center">PREVIEW ONLY &middot; <a href="index.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Home</a> <a href="free-sedona-spotlight.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Free Sedona Spotlight</a> <a href="nominate.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Nominate</a> <a href="cities.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Cities</a> <a href="contact.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Contact</a> <a href="featured-businesses.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Featured Businesses</a> <a href="not-found.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Page Not Found</a></div>
+<div style="background:#000;color:#999;font:12px/1.4 Montserrat,system-ui,sans-serif;padding:10px 16px;text-align:center">PREVIEW ONLY &middot; <a href="index.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Home</a> <a href="free-business-spotlight.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Free Business Spotlight</a> <a href="nominate.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Nominate</a> <a href="cities.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Cities</a> <a href="contact.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Contact</a> <a href="featured-businesses.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Featured Businesses</a> <a href="not-found.html" style="color:#E8D3A6;margin:0 10px;text-decoration:none">Page Not Found</a></div>
 <!-- BCA | Global header — paste as the first Custom HTML element on every page (full-width section, 0 padding). -->
 <header class="bca bca-header">
   <div class="bca-wrap bca-header__row">
@@ -235,7 +233,7 @@
       <a href="/#how-it-works">How It Works</a>
       <a href="/featured-businesses">Featured Businesses</a>
       <a href="/all-businesses-by-state">Cities</a>
-      <a href="/free-sedona-business-interviews">Free Spotlight</a>
+      <a href="/free-business-spotlight">Free Spotlight</a>
       <a href="/contact">Contact</a>
     </nav>
     <a class="bca-btn bca-btn--ink bca-header__cta" href="/nominate">Nominate a Business</a>
@@ -247,7 +245,7 @@
         <a href="/#how-it-works">How It Works</a>
         <a href="/featured-businesses">Featured Businesses</a>
         <a href="/all-businesses-by-state">Cities</a>
-        <a href="/free-sedona-business-interviews">Free Spotlight</a>
+        <a href="/free-business-spotlight">Free Spotlight</a>
         <a href="/contact">Contact</a>
         <a class="bca-btn bca-btn--ink" href="/nominate">Nominate a Business</a>
       </nav>
@@ -256,29 +254,28 @@
 </header>
 
 <main>
-<!-- BCA | Cities (page slug: /all-businesses-by-state) — active cities only, plus "bring it to your city".
-     To add a city later: copy one .bca-state block, change the state/city names and links. -->
+<!-- BCA | Cities (page slug: /all-businesses-by-state) — featured businesses plus "bring it to your city". -->
 <section class="bca bca-hero" style="padding:88px 0 96px" aria-labelledby="bca-cities-title">
   <div class="bca-wrap">
     <span class="bca-eyebrow">Cities</span>
-    <h1 class="bca-h1" id="bca-cities-title">Where we're celebrating</h1>
-    <p class="bca-lead">We launch one city at a time, so every community gets a program done right. Here's where Best of the City Awards is live today.</p>
+    <h1 class="bca-h1" id="bca-cities-title">One city at a time</h1>
+    <p class="bca-lead">We build each city's program one at a time, with local businesses and community partners, so every community gets it done right.</p>
   </div>
 </section>
-<section class="bca bca-section" aria-label="Active cities">
+<section class="bca bca-section" aria-label="Featured businesses and your city">
   <div class="bca-wrap bca-grid bca-grid--2" style="align-items:stretch">
     <div class="bca-state">
-      <span class="bca-eyebrow">Now Live</span>
-      <h2 class="bca-h2" style="font-size:40px;margin-bottom:10px">Arizona</h2>
-      <p class="bca-muted" style="margin:0">Our launch state, home to our first season of community recognition.</p>
+      <span class="bca-eyebrow">Spotlights</span>
+      <h2 class="bca-h2" style="font-size:40px;margin-bottom:10px">Featured businesses</h2>
+      <p class="bca-muted" style="margin:0">Read the stories of the local businesses we've spotlighted so far.</p>
       <div class="bca-state__cities">
-        <a class="bca-chip" href="/featured-businesses">Sedona &rarr;</a>
+        <a class="bca-chip" href="/featured-businesses">Browse spotlights &rarr;</a>
       </div>
     </div>
     <div class="bca-card" style="display:flex;flex-direction:column;justify-content:center;padding:40px">
-      <span class="bca-eyebrow">Coming Soon</span>
+      <span class="bca-eyebrow">Your City</span>
       <h2 class="bca-h3" style="font-size:28px">Want Best of the City in your city?</h2>
-      <p class="bca-muted">We're choosing our next cities now. Tell us where you'd like to see the program next — business owners, chambers and community partners welcome.</p>
+      <p class="bca-muted">Tell us where you'd like to see the program — business owners, chambers and community partners welcome.</p>
       <div class="bca-actions" style="margin-top:8px"><a class="bca-btn bca-btn--ink" href="/contact">Suggest a City</a></div>
     </div>
   </div>
@@ -307,7 +304,7 @@
       <div>
         <h2>For Businesses</h2>
         <ul>
-          <li><a href="/free-sedona-business-interviews">Free Sedona Spotlight</a></li>
+          <li><a href="/free-business-spotlight">Free Business Spotlight</a></li>
           <li><a href="/#services">Media Packages</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="/contact">Contact</a></li>
@@ -340,6 +337,6 @@
 </footer>
 
 <script>
-(function(){var r={"/": "index.html", "/free-sedona-business-interviews": "free-sedona-spotlight.html", "/nominate": "nominate.html", "/all-businesses-by-state": "cities.html", "/contact": "contact.html", "/featured-businesses": "featured-businesses.html", "/404": "not-found.html"};document.addEventListener('click',function(e){var a=e.target.closest('a[href^="/"]');if(!a)return;var h=a.getAttribute('href'),p=h.split('#')[0]||'/',f=r[p];if(f){e.preventDefault();location.href=f+(h.indexOf('#')>-1?h.slice(h.indexOf('#')):'');}});})();
+(function(){var r={"/": "index.html", "/free-business-spotlight": "free-business-spotlight.html", "/nominate": "nominate.html", "/all-businesses-by-state": "cities.html", "/contact": "contact.html", "/featured-businesses": "featured-businesses.html", "/404": "not-found.html"};document.addEventListener('click',function(e){var a=e.target.closest('a[href^="/"]');if(!a)return;var h=a.getAttribute('href'),p=h.split('#')[0]||'/',f=r[p];if(f){e.preventDefault();location.href=f+(h.indexOf('#')>-1?h.slice(h.indexOf('#')):'');}});})();
 </script>
 </body></html>

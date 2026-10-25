@@ -36,7 +36,7 @@ config.json        asset_base = where the logo files are hosted (jsDelivr, pinne
 | Page | Slug | Blocks (in order) |
 |---|---|---|
 | Home | `/` | header, home/01 … home/07, footer |
-| Free Sedona Spotlight | `/free-sedona-business-interviews` | header, free-sedona-spotlight/01 … 05, footer |
+| Free Business Spotlight | `/free-business-spotlight` | header, free-business-spotlight/01 … 05, footer |
 | Nominate *(new)* | `/nominate` | header, nominate/01, footer |
 | Cities | `/all-businesses-by-state` | header, cities/01, footer |
 | Contact | `/contact` | header, contact/01, footer |
@@ -52,13 +52,7 @@ Home page in GHL is built this way.
 4. **Forms:** Nominate and Contact embed GHL forms ("BCA - Nominate a Business" and
    "BCA - Contact Us" in Sites > Forms). Edit the fields in GHL; the pages update on their own.
 
-## Before going live — fill these in
-
-Anything still needing a real value is wrapped in `<span class="bca-todo">` and shows
-**bright yellow** on the page. Search `src/` for `bca-todo`:
-
-- `[VOTING OPEN DATE]` — home season bar
-- `[APPLICATION DEADLINE, incl. year]` — Free Spotlight hero and availability section (2 places)
+## Before going live
 
 Confirm these statements are true before publishing (they're new copy):
 
@@ -70,7 +64,7 @@ Confirm these statements are true before publishing (they're new copy):
 ## What changed from the Webflow site
 
 - Removed the placeholder testimonials (Willow Boutique, Apex Fitness, Brightside Café); the only quote is Jamie Inglett's real one
-- Removed expired "December 2025" / "February 1st" dates; dates are now fill-in placeholders, and the footer year updates itself
+- Removed all Sedona-launch dates and deadlines; the spotlight offer is now a general Free Business Spotlight, and the footer year updates itself
 - Fixed the package value: $499 + $2,499 = **$2,998** (was $2,999)
 - Every "See How It Works" button scrolls to a real section; added a real `/nominate` page
 - Cities page shows only live cities plus "Suggest a city," instead of 50 empty states; Arizona link is `/state/arizona`
@@ -89,5 +83,5 @@ are variables at the top of `src/global/head.html`.
 - **Spotlight articles** still live on the old Webflow site (best-of-the-city-awards-6f55f4.webflow.io).
   The Featured Businesses cards link there and open in a new tab. Keep that Webflow site up until the
   articles are moved into GHL (Sites > Blogs), then point the links in `src/pages/home/04-featured.html`
-  and `src/pages/free-sedona-spotlight/03-previous-feature.html` at the new posts.
+  and `src/pages/free-business-spotlight/03-previous-feature.html` at the new posts.
 - **Form footer links** ("Privacy Policy | Terms of Service") in both GHL forms use GHL defaults; set real URLs.
