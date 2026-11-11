@@ -49,8 +49,9 @@ Existing slugs are kept so current links and search rankings carry over.
 section and footer) for ONE Code element in a single full-width, 0-padding section. The
 Home page in GHL is built this way.
 
-4. **Forms:** Nominate and Contact embed GHL forms ("BCA - Nominate a Business" and
-   "BCA - Contact Us" in Sites > Forms). Edit the fields in GHL; the pages update on their own.
+4. **Forms:** Nominate, Contact and Free Business Spotlight embed GHL forms ("BCA - Nominate a Business",
+   "BCA - Contact Us" and "BCA - Free Spotlight Application" in Sites > Forms). Edit the fields in GHL;
+   the pages update on their own. The spotlight form sits at `/free-business-spotlight#apply`.
 
 ## Before going live
 
