@@ -1,0 +1,97 @@
+/* BCA | GHL form styles — paste into each GHL form: Sites > Forms > (form) > Styles > Custom CSS.
+   Used by: BCA - Free Spotlight Application, BCA - Nominate a Business, BCA - Contact Us.
+   GHL forms load in an iframe, so the site's head styles can't reach them; this file brings the brand inside. */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600&display=swap');
+
+body, #_builder-form, .form-builder--wrap, .ghl-form-wrap {
+  background: transparent !important;
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+  color: #151515 !important;
+}
+#_builder-form, .form-builder--wrap {
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 20px 22px !important;
+}
+.form-builder--item { margin-bottom: 18px !important; }
+
+/* Labels: small, uppercase, tracked */
+.form-builder--item label.field-label, label.field-label, .label-alignment {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  color: #5A534B !important;
+  margin-bottom: 8px !important;
+}
+
+/* Inputs. GHL styles these with "#_builder-form .form-builder--item input[type][class]",
+   so the doubled id below is needed to win. */
+#_builder-form#_builder-form .form-control, #_builder-form#_builder-form .form-builder--item textarea,
+#_builder-form#_builder-form .form-builder--item select, #_builder-form#_builder-form .multiselect__tags {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+  font-size: 15px !important;
+  color: #151515 !important;
+  background: #FBF8F2 !important;
+  border: 1px solid #E3D9C7 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  min-height: 46px !important;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease !important;
+}
+#_builder-form#_builder-form .form-builder--item textarea { min-height: 120px !important; line-height: 1.6 !important; }
+#_builder-form#_builder-form .form-control::placeholder, #_builder-form#_builder-form textarea::placeholder { color: #9A9186 !important; opacity: 1 !important; }
+#_builder-form#_builder-form .form-control:hover, #_builder-form#_builder-form .form-builder--item textarea:hover { border-color: #C49A55 !important; }
+#_builder-form#_builder-form .form-control:focus, #_builder-form#_builder-form .form-builder--item textarea:focus,
+#_builder-form#_builder-form .form-builder--item select:focus {
+  outline: none !important;
+  background: #fff !important;
+  border-color: #C49A55 !important;
+  box-shadow: 0 0 0 3px rgba(196,154,85,.18) !important;
+}
+.email-input svg, .email-input-wrapper svg { color: #835E1E !important; }
+
+/* Consent checkboxes */
+.terms-and-conditions label, .checkbox-container label {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #5A534B !important;
+}
+.form-builder--item input[type=checkbox], .form-builder--item input[type=radio] {
+  accent-color: #C49A55 !important;
+  width: 16px !important; height: 16px !important;
+}
+
+/* Submit button: matches .bca-btn--gold */
+.form-builder--item button, button.button-element, .ghl-btn, .btn.btn-dark {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  color: #151515 !important;
+  background: #C49A55 !important;
+  border: 1px solid #C49A55 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  padding: 16px 28px !important;
+  min-height: 52px !important;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease !important;
+}
+.form-builder--item button:hover, button.button-element:hover, .btn.btn-dark:hover {
+  background: #151515 !important;
+  border-color: #151515 !important;
+  color: #E8D3A6 !important;
+}
+
+/* Footer links (Privacy | Terms) and errors */
+.text-element, .text-element p { font-family: 'Montserrat', system-ui, sans-serif !important; font-size: 12px !important; color: #5A534B !important; }
+.text-element a { color: #835E1E !important; text-decoration: none !important; border-bottom: 1px solid #E8D3A6 !important; }
+.text-element a:hover { color: #151515 !important; }
+.error, .help-block, .text-danger, .field-error { font-family: 'Montserrat', system-ui, sans-serif !important; font-size: 12px !important; color: #A1362B !important; }

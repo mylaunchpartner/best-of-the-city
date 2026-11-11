@@ -52,6 +52,9 @@ Home page in GHL is built this way.
 4. **Forms:** Nominate, Contact and Free Business Spotlight embed GHL forms ("BCA - Nominate a Business",
    "BCA - Contact Us" and "BCA - Free Spotlight Application" in Sites > Forms). Edit the fields in GHL;
    the pages update on their own. The spotlight form sits at `/free-business-spotlight#apply`.
+   **Form styling:** GHL forms load in an iframe, so the site's styles can't reach them. Each form has
+   `src/global/ghl-form.css` pasted into *Form builder > Styles & Options > Advanced > Custom CSS*.
+   After editing that file, re-paste it into all three forms and save.
 
 ## Before going live
 
