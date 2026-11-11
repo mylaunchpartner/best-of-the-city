@@ -54,7 +54,8 @@ Home page in GHL is built this way.
    the pages update on their own. The spotlight form sits at `/free-business-spotlight#apply`.
    **Form styling:** GHL forms load in an iframe, so the site's styles can't reach them. Each form has
    `src/global/ghl-form.css` pasted into *Form builder > Styles & Options > Advanced > Custom CSS*.
-   After editing that file, re-paste it into all three forms and save.
+   After editing that file, re-paste it into all three forms and save. The forms use a compact layout
+   (two short fields per row); the page lets GHL's embed script size the iframe to fit.
 
 ## Before going live
 

@@ -1,7 +1,8 @@
-/* BCA | GHL form styles — paste into each GHL form: Sites > Forms > (form) > Styles > Custom CSS.
+/* BCA | GHL form styles — paste into each GHL form: Form builder > Styles & Options > Advanced > Custom CSS.
    Used by: BCA - Free Spotlight Application, BCA - Nominate a Business, BCA - Contact Us.
-   GHL forms load in an iframe, so the site's head styles can't reach them; this file brings the brand inside. */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600&display=swap');
+   GHL forms load in an iframe, so the site's head styles can't reach them; this file brings the brand inside.
+   Compact layout: short fields sit two per row (by GHL field name), tight spacing, 40px inputs. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 body, #_builder-form, .form-builder--wrap, .ghl-form-wrap {
   background: transparent !important;
@@ -12,19 +13,38 @@ body, #_builder-form, .form-builder--wrap, .ghl-form-wrap {
   border: 0 !important;
   box-shadow: none !important;
   border-radius: 0 !important;
-  padding: 20px 22px !important;
+  padding: 16px 18px !important;
 }
-.form-builder--item { margin-bottom: 18px !important; }
+
+/* Grid: every field full width, short ones two per row */
+#_builder-form .fields-container { flex-direction: row !important; flex-wrap: wrap !important; column-gap: 14px !important; margin: 0 !important; }
+#_builder-form .fields-container > .form-field-wrapper { flex: 0 0 100% !important; max-width: 100% !important; margin-bottom: 12px !important; padding: 0 !important; }
+#_builder-form .fields-container > .form-field-wrapper:has(input[name=first_name]),
+#_builder-form .fields-container > .form-field-wrapper:has(input[name=last_name]),
+#_builder-form .fields-container > .form-field-wrapper:has(input[name=phone]),
+#_builder-form .fields-container > .form-field-wrapper:has(input[name=email]),
+#_builder-form .fields-container > .form-field-wrapper:has(input[name=city]),
+#_builder-form .fields-container > .form-field-wrapper:has(input[name=state]) {
+  flex: 0 0 calc(50% - 7px) !important; max-width: calc(50% - 7px) !important;
+}
+@media (max-width: 480px) {
+  #_builder-form .fields-container > .form-field-wrapper { flex: 0 0 100% !important; max-width: 100% !important; }
+}
+.form-builder--item { margin-bottom: 0 !important; }
+.form-builder--item, .field-container { line-height: 1.2 !important; }
 
 /* Labels: small, uppercase, tracked */
 .form-builder--item label.field-label, label.field-label, .label-alignment {
+  display: block !important;
   font-family: 'Montserrat', system-ui, sans-serif !important;
-  font-size: 11px !important;
+  font-size: 10px !important;
+  line-height: 16px !important;
   font-weight: 600 !important;
   letter-spacing: .14em !important;
   text-transform: uppercase !important;
   color: #5A534B !important;
-  margin-bottom: 8px !important;
+  margin: 0 0 5px !important;
+  padding: 0 !important;
 }
 
 /* Inputs. GHL styles these with "#_builder-form .form-builder--item input[type][class]",
@@ -32,16 +52,19 @@ body, #_builder-form, .form-builder--wrap, .ghl-form-wrap {
 #_builder-form#_builder-form .form-control, #_builder-form#_builder-form .form-builder--item textarea,
 #_builder-form#_builder-form .form-builder--item select, #_builder-form#_builder-form .multiselect__tags {
   font-family: 'Montserrat', system-ui, sans-serif !important;
-  font-size: 15px !important;
+  font-size: 14px !important;
   color: #151515 !important;
   background: #FBF8F2 !important;
   border: 1px solid #E3D9C7 !important;
   border-radius: 2px !important;
   box-shadow: none !important;
-  min-height: 46px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 8px 12px !important;
   transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease !important;
 }
-#_builder-form#_builder-form .form-builder--item textarea { min-height: 120px !important; line-height: 1.6 !important; }
+#_builder-form#_builder-form .email-input-wrapper .form-control { padding-left: 32px !important; }
+#_builder-form#_builder-form .form-builder--item textarea { height: 84px !important; min-height: 84px !important; padding: 9px 12px !important; line-height: 1.5 !important; }
 #_builder-form#_builder-form .form-control::placeholder, #_builder-form#_builder-form textarea::placeholder { color: #9A9186 !important; opacity: 1 !important; }
 #_builder-form#_builder-form .form-control:hover, #_builder-form#_builder-form .form-builder--item textarea:hover { border-color: #C49A55 !important; }
 #_builder-form#_builder-form .form-control:focus, #_builder-form#_builder-form .form-builder--item textarea:focus,
@@ -54,18 +77,20 @@ body, #_builder-form, .form-builder--wrap, .ghl-form-wrap {
 .email-input svg, .email-input-wrapper svg { color: #835E1E !important; }
 
 /* Consent checkboxes */
-.terms-and-conditions label, .checkbox-container label {
+.terms-and-conditions label, .checkbox-container label, .terms-text-container, .terms-text-container p, .terms-and-conditions p {
   font-family: 'Montserrat', system-ui, sans-serif !important;
-  font-size: 12px !important;
-  line-height: 1.6 !important;
+  font-size: 10.5px !important;
+  line-height: 1.45 !important;
   font-weight: 400 !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
   color: #5A534B !important;
 }
+.checkbox-container { margin-bottom: 6px !important; }
+.terms-text-container p, .terms-and-conditions p { margin: 0 !important; }
 .form-builder--item input[type=checkbox], .form-builder--item input[type=radio] {
   accent-color: #C49A55 !important;
-  width: 16px !important; height: 16px !important;
+  width: 15px !important; height: 15px !important;
 }
 
 /* Submit button: matches .bca-btn--gold */
@@ -80,8 +105,8 @@ body, #_builder-form, .form-builder--wrap, .ghl-form-wrap {
   border: 1px solid #C49A55 !important;
   border-radius: 2px !important;
   box-shadow: none !important;
-  padding: 16px 28px !important;
-  min-height: 52px !important;
+  padding: 12px 20px !important;
+  min-height: 46px !important;
   transition: background-color .2s ease, color .2s ease, border-color .2s ease !important;
 }
 .form-builder--item button:hover, button.button-element:hover, .btn.btn-dark:hover {
@@ -91,7 +116,7 @@ body, #_builder-form, .form-builder--wrap, .ghl-form-wrap {
 }
 
 /* Footer links (Privacy | Terms) and errors */
-.text-element, .text-element p { font-family: 'Montserrat', system-ui, sans-serif !important; font-size: 12px !important; color: #5A534B !important; }
+.text-element, .text-element p { font-family: 'Montserrat', system-ui, sans-serif !important; font-size: 11px !important; color: #5A534B !important; margin: 0 !important; }
 .text-element a { color: #835E1E !important; text-decoration: none !important; border-bottom: 1px solid #E8D3A6 !important; }
 .text-element a:hover { color: #151515 !important; }
-.error, .help-block, .text-danger, .field-error { font-family: 'Montserrat', system-ui, sans-serif !important; font-size: 12px !important; color: #A1362B !important; }
+.error, .help-block, .text-danger, .field-error { font-family: 'Montserrat', system-ui, sans-serif !important; font-size: 11px !important; color: #A1362B !important; }
