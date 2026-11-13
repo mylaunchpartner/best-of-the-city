@@ -54,6 +54,12 @@ def build_dist(base):
         (full / f"{page['dir']}.html").write_text(
             f"<!-- BCA | {page['title']} — FULL PAGE. Paste into ONE Code element in a full-width, 0-padding section. -->\n"
             + "\n".join(parts))
+    # Spotlights blog templates: head + header/footer filled in, ready for GHL's blog builder.
+    for f in sorted((SRC / "spotlights").glob("*.html")):
+        t = sub(f.read_text(), base).replace("{{HEADER}}", g["header"]).replace("{{FOOTER}}", g["footer"])
+        if "-top" in f.name:
+            t = g["head"] + "\n" + t
+        (DIST / "spotlights" / f.name).write_text(t)
     print(f"dist/ built with asset base: {base}")
 
 
