@@ -7,7 +7,7 @@ location: Sedona, Arizona
 category: Tattoo & Art
 people: Joey Navarro, Owner & Artist; Amanda Navarro; Eric Lynn, Artist
 date: 2026-04-08
-video:
+video: AgkQvr-59Bk
 cover: destination-tattoo-sedona.jpg
 alt: Destination Tattoo Sedona logo with smiling cactus illustrations on an orange background
 meta: Destination Tattoo Sedona built a studio around patience, custom work and the meaning of getting inked in Sedona. Our Best of the City Awards spotlight.
