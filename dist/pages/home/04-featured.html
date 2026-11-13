@@ -1,48 +1,72 @@
-<!-- BCA | Home 04 — Featured businesses (reuse on /featured-businesses).
-     Article links point to the old Webflow site until the spotlight articles are moved into GHL. -->
+<!-- BCA | Home 04 — Latest business spotlights (also used on other pages).
+     Loads the 3 newest posts from the Spotlights blog (/spotlights) automatically, so new spotlights appear here
+     with no code change. The two cards below are the fallback if that request fails. -->
+<style>
+.bca-spots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,380px));justify-content:center;gap:32px}
+.bca-spot{display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--bca-line);text-decoration:none;color:inherit;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+.bca-spot:hover{border-color:var(--bca-gold);transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(21,21,21,.35)}
+.bca-spot__img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--bca-sand)}
+.bca-spot__body{display:flex;flex-direction:column;flex:1;padding:24px 26px 28px}
+.bca-spot__name{font-family:var(--bca-serif);font-size:21px;line-height:1.38;color:var(--bca-ink);margin:0 0 12px}
+.bca-spot__tag{font-size:15px;line-height:1.65;color:var(--bca-muted);margin:0 0 20px}
+.bca-spot__cta{margin-top:auto;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bca-ink)}
+.bca-spot:hover .bca-spot__cta{color:var(--bca-gold-deep)}
+</style>
 <section class="bca bca-section" aria-labelledby="bca-featured-title">
   <div class="bca-wrap">
-    <div class="bca-head">
+    <div class="bca-head bca-head--center">
       <span class="bca-eyebrow">Business Spotlights</span>
       <h2 class="bca-h2" id="bca-featured-title">Meet our featured businesses</h2>
       <p class="bca-lead">Real stories from the owners and teams who make our city special.</p>
     </div>
-    <ul class="bca-grid bca-grid--4">
+    <ul class="bca-spots" data-bca-spotlights="3">
       <li>
-        <a class="bca-feature" href="https://best-of-the-city-awards-6f55f4.webflow.io/featured-businesses/pink-jeep-tours" target="_blank" rel="noopener">
-          <span class="bca-feature__loc">Sedona, Arizona</span>
-          <span class="bca-feature__name">Pink Jeep Tours</span>
-          <span class="bca-feature__tag">Adventure meets legacy: America's original off-road experience since 1960.</span>
-          <span class="bca-feature__cta">Read spotlight &rarr;</span>
+        <a class="bca-spot" href="/post/destination-tattoo-sedona">
+          <img class="bca-spot__img" src="https://files.leadconnectorhq.com/file/6af738e7fdf6b54fd7022638/destination-tattoo-sedona.jpg" alt="Destination Tattoo Sedona" loading="lazy">
+          <span class="bca-spot__body">
+            <span class="bca-spot__name">Destination Tattoo Sedona: Where the Experience Lasts</span>
+            <span class="bca-spot__tag">A Sedona studio built around patience, custom work and a tattoo worth the trip.</span>
+            <span class="bca-spot__cta">Read spotlight &rarr;</span>
+          </span>
         </a>
       </li>
       <li>
-        <a class="bca-feature" href="https://best-of-the-city-awards-6f55f4.webflow.io/featured-businesses/rascal-modern-american-diner-bar" target="_blank" rel="noopener">
-          <span class="bca-feature__loc">Sedona, Arizona</span>
-          <span class="bca-feature__name">Rascal Modern American Diner &amp; Bar</span>
-          <span class="bca-feature__tag">Where comfort food meets culinary excellence in the heart of Sedona.</span>
-          <span class="bca-feature__cta">Read spotlight &rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a class="bca-feature" href="https://best-of-the-city-awards-6f55f4.webflow.io/featured-businesses/elote-cafe" target="_blank" rel="noopener">
-          <span class="bca-feature__loc">Sedona, Arizona</span>
-          <span class="bca-feature__name">Elote Caf&eacute;</span>
-          <span class="bca-feature__tag">Where culinary artistry meets red rock majesty.</span>
-          <span class="bca-feature__cta">Read spotlight &rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a class="bca-feature" href="https://best-of-the-city-awards-6f55f4.webflow.io/spotlight-articles/enchanting-earth" target="_blank" rel="noopener">
-          <span class="bca-feature__loc">Sedona, Arizona</span>
-          <span class="bca-feature__name">Enchanting Earth</span>
-          <span class="bca-feature__tag">Owner Jamie Inglett on the work, the mission and what recognition means.</span>
-          <span class="bca-feature__cta">Read spotlight &rarr;</span>
+        <a class="bca-spot" href="/post/enchanting-earth">
+          <img class="bca-spot__img" src="https://files.leadconnectorhq.com/file/6af738d9e066b14ab5d962d2/enchanting-earth.jpg" alt="Inside Enchanting Earth in Sedona" loading="lazy">
+          <span class="bca-spot__body">
+            <span class="bca-spot__name">Enchanting Earth: Sedona's Sacred Energy in Fine Jewelry</span>
+            <span class="bca-spot__tag">Owner Jamie Inglett on leaving banking to follow a calling, and the care behind every crystal.</span>
+            <span class="bca-spot__cta">Read spotlight &rarr;</span>
+          </span>
         </a>
       </li>
     </ul>
     <div class="bca-actions" style="margin-top:44px">
-      <a class="bca-link" href="/spotlights">View all featured businesses</a>
+      <a class="bca-link" href="/spotlights">View all spotlights</a>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var list=document.querySelector('[data-bca-spotlights]');
+  if(!list||!window.fetch||!window.DOMParser)return;
+  var max=parseInt(list.getAttribute('data-bca-spotlights'),10)||3;
+  function esc(s){var d=document.createElement('div');d.textContent=s||'';return d.innerHTML}
+  fetch('/spotlights',{credentials:'same-origin'}).then(function(r){return r.ok?r.text():Promise.reject()}).then(function(html){
+    var doc=new DOMParser().parseFromString(html,'text/html');
+    var boxes=[].slice.call(doc.querySelectorAll('.blog-box')).slice(0,max);
+    var cards=boxes.map(function(b){
+      var a=b.querySelector('.blog-title a')||b.querySelector('a[href*="/post/"]');
+      if(!a)return '';
+      var img=b.querySelector('img'),desc=b.querySelector('.blog-description');
+      var href=a.getAttribute('href').replace(/^https?:\/\/[^\/]+/,'');
+      return '<li><a class="bca-spot" href="'+esc(href)+'">'+
+        (img?'<img class="bca-spot__img" src="'+esc(img.getAttribute('src'))+'" alt="'+esc(img.getAttribute('alt')||a.textContent.trim())+'" loading="lazy">':'')+
+        '<span class="bca-spot__body"><span class="bca-spot__name">'+esc(a.textContent.trim())+'</span>'+
+        (desc?'<span class="bca-spot__tag">'+esc(desc.textContent.trim())+'</span>':'')+
+        '<span class="bca-spot__cta">Read spotlight &rarr;</span></span></a></li>';
+    }).filter(Boolean);
+    if(cards.length)list.innerHTML=cards.join('');
+  }).catch(function(){});
+})();
+</script>
