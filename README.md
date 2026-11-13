@@ -40,7 +40,8 @@ config.json        asset_base = where the logo files are hosted (jsDelivr, pinne
 | Nominate *(new)* | `/nominate` | header, nominate/01, footer |
 | Cities | `/all-businesses-by-state` | header, cities/01, footer |
 | Contact | `/contact` | header, contact/01, footer |
-| Featured Businesses | `/featured-businesses` | header, featured-businesses/01, home/04, home/07, footer |
+| How It Works | `/how-it-works` | header, how-it-works/01, how-it-works/02, home/06, home/07, footer |
+| Featured Businesses *(retired)* | `/featured-businesses` | forwards to `/spotlights` |
 | 404 | site's 404 page | header, not-found/01, footer |
 
 Existing slugs are kept so current links and search rankings carry over.
@@ -83,10 +84,26 @@ Edit files in `src/`, then run `python3 build.py` and re-paste the changed block
 All CSS classes start with `bca-` so they can't collide with GHL's styles. Colors and fonts
 are variables at the top of `src/global/head.html`.
 
+## Business Spotlights (GHL blog, shown as "Spotlights")
+
+Spotlights are GHL blog posts: Sites > Blogs > **Spotlights**. The list lives at `/spotlights`, each story at
+`/post/<slug>`. The homepage "Meet our featured businesses" section pulls the 3 newest posts from `/spotlights`
+automatically, so publishing a post updates the site with no code change.
+
+**Add a new spotlight**
+1. Copy `spotlights/content/_TEMPLATE.txt` to `spotlights/content/<slug>.txt` and fill it in (YouTube ID goes in `video:`).
+2. Run `python3 build.py`. The post body appears in `dist/spotlights/posts/<slug>.html`.
+3. In GHL: Spotlights > New post > clear the sample text > `<>` (custom code) > paste the body > Continue.
+4. Settings: title, slug, canonical `bestofthecityawards.com/post/<slug>`, description, cover image + alt text,
+   category = the city (e.g. "Sedona, AZ"), author = **Best of the City Awards**, keywords > Publish.
+   With a video, the cover only shows on the Spotlights list (the video leads the story); without one, the cover shows on the story too.
+
+**Templates:** the list and story page designs are in `src/spotlights/` (01/02 = list page top/bottom,
+03/04 = story page top/bottom). They're pasted into the Spotlights blog builder (Edit blog site > Blog Home / Blog Post).
+The header and footer live inside them, so re-paste all four when the header or footer changes.
+
 ## Known follow-ups
 
-- **Spotlight articles** still live on the old Webflow site (best-of-the-city-awards-6f55f4.webflow.io).
-  The Featured Businesses cards link there and open in a new tab. Keep that Webflow site up until the
-  articles are moved into GHL (Sites > Blogs), then point the links in `src/pages/home/04-featured.html`
-  and `src/pages/free-business-spotlight/03-previous-feature.html` at the new posts.
+- **Destination Tattoo video:** add its YouTube ID to `spotlights/content/destination-tattoo-sedona.txt`, rebuild, and re-paste the post body.
+- **Destination Tattoo cover** is their logo graphic; swap in a studio photo when available.
 - **Form footer links** ("Privacy Policy | Terms of Service") in both GHL forms use GHL defaults; set real URLs.

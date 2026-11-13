@@ -1,0 +1,24 @@
+title: Business Name: Short Hook (max 60 characters, shown as the post title)
+slug: business-name
+business: Business Name
+tagline: One-line italic subtitle under the title
+card: (not used by GHL; keep as a one-sentence summary for reference)
+location: City, State
+category: (for your reference; set the city category in GHL, e.g. Sedona, AZ)
+people: Owner Name, Owner; Second Person, Role
+date: YYYY-MM-DD
+video: YOUTUBE_VIDEO_ID   (the part after watch?v= ; leave blank if none yet and the cover photo shows instead)
+cover: business-name.jpg
+alt: Describe the cover photo for screen readers
+meta: Search description, 160 characters max.
+keywords: keyword one, keyword two, keyword three, keyword four
+links: Website|https://example.com/; Instagram|https://www.instagram.com/handle/
+quote: Optional pull quote from the owner.|Owner Name, Owner
+---
+First paragraph (shown slightly larger).
+
+Next paragraph. Separate paragraphs with a blank line.
+
+## A Section Heading
+
+More paragraphs...
