@@ -22,6 +22,8 @@ PAGES = {
     "contact": {"title": "Contact",              "dir": "contact",              "path": "/contact"},
     "featured-businesses": {"title": "Featured Businesses", "dir": "featured-businesses", "path": "/featured-businesses",
                 "blocks": ["featured-businesses/01-hero.html", "home/04-featured.html", "home/07-cta.html"]},
+    "how-it-works": {"title": "How It Works",     "dir": "how-it-works",         "path": "/how-it-works",
+                "blocks": ["how-it-works/01-hero.html", "how-it-works/02-stages.html", "home/06-integrity-faq.html", "home/07-cta.html"]},
     "not-found": {"title": "Page Not Found",     "dir": "not-found",            "path": "/404"},
 }
 
