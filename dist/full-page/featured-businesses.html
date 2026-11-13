@@ -247,100 +247,12 @@
   </div>
 </header>
 
-<!-- BCA | Featured Businesses 01 — Hero (page slug: /featured-businesses). Followed by home/04 (cards) and home/07 (CTA). -->
-<section class="bca bca-hero" style="padding:88px 0 96px" aria-labelledby="bca-fb-title">
-  <div class="bca-wrap">
-    <span class="bca-eyebrow">Featured Businesses</span>
-    <h1 class="bca-h1" id="bca-fb-title" style="max-width:860px">The businesses that make their cities special</h1>
-    <p class="bca-lead">Every spotlight is a real conversation with a local owner about their story, their team and what keeps their community coming back.</p>
-  </div>
-</section>
-
-<!-- BCA | Home 04 — Latest business spotlights (also used on other pages).
-     Loads the 3 newest posts from the Spotlights blog (/spotlights) automatically, so new spotlights appear here
-     with no code change. The two cards below are the fallback if that request fails. -->
-<style>
-.bca-spots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,380px));justify-content:center;gap:32px}
-.bca-spot{display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--bca-line);text-decoration:none;color:inherit;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease}
-.bca-spot:hover{border-color:var(--bca-gold);transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(21,21,21,.35)}
-.bca-spot__img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--bca-sand)}
-.bca-spot__body{display:flex;flex-direction:column;flex:1;padding:24px 26px 28px}
-.bca-spot__name{font-family:var(--bca-serif);font-size:21px;line-height:1.38;color:var(--bca-ink);margin:0 0 12px}
-.bca-spot__tag{font-size:15px;line-height:1.65;color:var(--bca-muted);margin:0 0 20px}
-.bca-spot__cta{margin-top:auto;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bca-ink)}
-.bca-spot:hover .bca-spot__cta{color:var(--bca-gold-deep)}
-</style>
-<section class="bca bca-section" aria-labelledby="bca-featured-title">
-  <div class="bca-wrap">
-    <div class="bca-head bca-head--center">
-      <span class="bca-eyebrow">Business Spotlights</span>
-      <h2 class="bca-h2" id="bca-featured-title">Meet our featured businesses</h2>
-      <p class="bca-lead">Real stories from the owners and teams who make our city special.</p>
-    </div>
-    <ul class="bca-spots" data-bca-spotlights="3">
-      <li>
-        <a class="bca-spot" href="/post/destination-tattoo-sedona">
-          <img class="bca-spot__img" src="https://files.leadconnectorhq.com/file/6af738e7fdf6b54fd7022638/destination-tattoo-sedona.jpg" alt="Destination Tattoo Sedona" loading="lazy">
-          <span class="bca-spot__body">
-            <span class="bca-spot__name">Destination Tattoo Sedona: Where the Experience Lasts</span>
-            <span class="bca-spot__tag">A Sedona studio built around patience, custom work and a tattoo worth the trip.</span>
-            <span class="bca-spot__cta">Read spotlight &rarr;</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="bca-spot" href="/post/enchanting-earth">
-          <img class="bca-spot__img" src="https://files.leadconnectorhq.com/file/6af738d9e066b14ab5d962d2/enchanting-earth.jpg" alt="Inside Enchanting Earth in Sedona" loading="lazy">
-          <span class="bca-spot__body">
-            <span class="bca-spot__name">Enchanting Earth: Sedona's Sacred Energy in Fine Jewelry</span>
-            <span class="bca-spot__tag">Owner Jamie Inglett on leaving banking to follow a calling, and the care behind every crystal.</span>
-            <span class="bca-spot__cta">Read spotlight &rarr;</span>
-          </span>
-        </a>
-      </li>
-    </ul>
-    <div class="bca-actions" style="margin-top:44px">
-      <a class="bca-link" href="/spotlights">View all spotlights</a>
-    </div>
-  </div>
-</section>
-<script>
-(function(){
-  var list=document.querySelector('[data-bca-spotlights]');
-  if(!list||!window.fetch||!window.DOMParser)return;
-  var max=parseInt(list.getAttribute('data-bca-spotlights'),10)||3;
-  function esc(s){var d=document.createElement('div');d.textContent=s||'';return d.innerHTML}
-  fetch('/spotlights',{credentials:'same-origin'}).then(function(r){return r.ok?r.text():Promise.reject()}).then(function(html){
-    var doc=new DOMParser().parseFromString(html,'text/html');
-    var boxes=[].slice.call(doc.querySelectorAll('.blog-box')).slice(0,max);
-    var cards=boxes.map(function(b){
-      var a=b.querySelector('.blog-title a')||b.querySelector('a[href*="/post/"]');
-      if(!a)return '';
-      var img=b.querySelector('img'),desc=b.querySelector('.blog-description');
-      var href=a.getAttribute('href').replace(/^https?:\/\/[^\/]+/,'');
-      return '<li><a class="bca-spot" href="'+esc(href)+'">'+
-        (img?'<img class="bca-spot__img" src="'+esc(img.getAttribute('src'))+'" alt="'+esc(img.getAttribute('alt')||a.textContent.trim())+'" loading="lazy">':'')+
-        '<span class="bca-spot__body"><span class="bca-spot__name">'+esc(a.textContent.trim())+'</span>'+
-        (desc?'<span class="bca-spot__tag">'+esc(desc.textContent.trim())+'</span>':'')+
-        '<span class="bca-spot__cta">Read spotlight &rarr;</span></span></a></li>';
-    }).filter(Boolean);
-    if(cards.length)list.innerHTML=cards.join('');
-  }).catch(function(){});
-})();
-</script>
-
-<!-- BCA | Home 07 — Closing call to action -->
-<section class="bca bca-cta" aria-labelledby="bca-home-cta-title">
-  <div class="bca-wrap">
-    <span class="bca-eyebrow" style="color:var(--bca-gold)">Know a business that deserves it?</span>
-    <h2 class="bca-h2" id="bca-home-cta-title">Put your favorite local business on the ballot</h2>
-    <p class="bca-lead">It takes two minutes and it's always free.</p>
-    <div class="bca-actions">
-      <a class="bca-btn bca-btn--gold" href="/nominate">Nominate a Business</a>
-      <a class="bca-btn bca-btn--line" href="/free-business-spotlight">Own a local business?</a>
-    </div>
-  </div>
-</section>
+<!-- BCA | Featured Businesses (retired) — this page now forwards to /spotlights, the Spotlights blog.
+     Kept so old links and bookmarks still work. -->
+<meta http-equiv="refresh" content="0; url=/spotlights">
+<link rel="canonical" href="https://bestofthecityawards.com/spotlights">
+<script>location.replace('/spotlights' + location.search);</script>
+<p style="font-family:Montserrat,sans-serif;text-align:center;padding:80px 20px">Featured businesses have moved to <a href="/spotlights">Business Spotlights</a>.</p>
 
 <!-- BCA | Global footer — paste as the last Custom HTML element on every page (full-width section, 0 padding). -->
 <footer class="bca bca-footer">
