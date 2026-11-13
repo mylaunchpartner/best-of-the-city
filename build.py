@@ -25,6 +25,8 @@ PAGES = {
     "how-it-works": {"title": "How It Works",     "dir": "how-it-works",         "path": "/how-it-works",
                 "blocks": ["how-it-works/01-hero.html", "how-it-works/02-stages.html", "home/06-integrity-faq.html", "home/07-cta.html"]},
     "not-found": {"title": "Page Not Found",     "dir": "not-found",            "path": "/404"},
+    "privacy-policy": {"title": "Privacy Policy", "dir": "privacy-policy",       "path": "/privacy-policy"},
+    "terms-of-service": {"title": "Terms of Service", "dir": "terms-of-service", "path": "/terms-of-service"},
 }
 
 
