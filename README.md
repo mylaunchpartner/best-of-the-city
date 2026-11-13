@@ -41,6 +41,8 @@ config.json        asset_base = where the logo files are hosted (jsDelivr, pinne
 | Cities | `/all-businesses-by-state` | header, cities/01, footer |
 | Contact | `/contact` | header, contact/01, footer |
 | How It Works | `/how-it-works` | header, how-it-works/01, how-it-works/02, home/06, home/07, footer |
+| Privacy Policy | `/privacy-policy` | header, privacy-policy/01, footer |
+| Terms of Service | `/terms-of-service` | header, terms-of-service/01, footer |
 | Featured Businesses *(retired)* | `/featured-businesses` | forwards to `/spotlights` |
 | 404 | site's 404 page | header, not-found/01, footer |
 
@@ -107,3 +109,7 @@ The header and footer live inside them, so re-paste all four when the header or 
 - **Destination Tattoo video:** add its YouTube ID to `spotlights/content/destination-tattoo-sedona.txt`, rebuild, and re-paste the post body.
 - **Destination Tattoo cover** is their logo graphic; swap in a studio photo when available.
 - **Form footer links** ("Privacy Policy | Terms of Service") in both GHL forms use GHL defaults; set real URLs.
+
+
+## Legal pages
+Privacy Policy and Terms of Service (effective November 13, 2026) are linked in the footer and from the "Privacy Policy | Terms of Service" line on all three GHL forms. Their SMS sections must stay in sync with the form consent text. Update the effective date when either changes.
