@@ -2,6 +2,26 @@
 <style>
 html,body{overflow-x:hidden}
 .bca-bleed{width:100vw;position:relative;left:50%;margin-left:-50vw}
+/* GHL blog template: remove the builder's padding so our full-width blocks sit flush */
+.c-section,.c-row,.c-column{padding-top:0!important;padding-bottom:0!important}
+/* Single spotlight (GHL blog post) */
+.c-section{background:#fff}
+.blog-html-container-single{max-width:840px!important;margin:0 auto!important;padding:64px 24px 80px!important;display:flex!important;flex-direction:column;font-family:'Montserrat',system-ui,sans-serif;border:0!important}
+.blog-html-container-single .meta-section-1:has(.blog-category){order:0;margin:0 0 14px!important}
+.blog-html-container-single .blog-category,.blog-html-container-single .blog-category a{font-family:'Montserrat',system-ui,sans-serif!important;font-size:11px!important;font-weight:600!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:#835E1E!important;background:none!important;padding:0!important;text-decoration:none!important}
+.blog-html-container-single .blog-content-title{order:1;font-family:'Libre Baskerville',Georgia,serif!important;font-size:clamp(30px,4.2vw,44px)!important;line-height:1.22!important;font-weight:400!important;color:#151515!important;margin:0 0 14px!important;text-transform:none!important}
+.blog-html-container-single .meta-section-1:has(.blog-date){order:2;margin:0 0 36px!important}
+.blog-html-container-single .blog-date{font-family:'Montserrat',system-ui,sans-serif!important;font-size:13px!important;color:#5A534B!important}
+.blog-html-container-single .blog-cover-image-container{order:3;margin:0 0 40px!important}
+.blog-html-container-single .blog-cover-image-container img{width:100%!important;height:auto!important;aspect-ratio:16/9;object-fit:cover;border-radius:0!important}
+.blog-html-container-single:has(.bca-post__video) .blog-cover-image-container{display:none!important}
+.blog-html-container-single #blogPostContent{order:4}
+.blog-html-container-single .blog-tags,.blog-html-container-single .hl-blog-content-back-to-top-container{display:none!important}
+.blog-html-container-single .blog-author-details{order:5;max-width:760px;width:100%;margin:48px auto 0!important;padding:24px 0 0!important;border-top:1px solid #E3D9C7;font-family:'Montserrat',system-ui,sans-serif!important;color:#5A534B}
+.blog-html-container-single .blog-author-details *{font-family:'Montserrat',system-ui,sans-serif!important}
+.blog-html-container-single .blog-back-button{order:6;max-width:760px;width:100%;margin:32px auto 0!important;font-size:12px!important;font-weight:600!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:#151515!important;text-decoration:none!important}
+.blog-html-container-single .blog-back-button:hover{color:#835E1E!important}
+@media(max-width:700px){.blog-html-container-single{padding:40px 20px 56px!important}}
 </style>
 <div class="bca-bleed">
 {{HEADER}}

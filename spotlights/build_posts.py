@@ -57,7 +57,6 @@ def esc(s):
 
 def build(meta, blocks):
     out = [STYLE, '<div class="bca-post">',
-           f'<p class="bca-post__kicker">Business Spotlight &middot; {esc(meta["location"])}</p>',
            f'<p class="bca-post__tagline">{esc(meta["tagline"])}</p>']
     if meta.get("video"):
         out.append(f'<div class="bca-post__video"><iframe src="https://www.youtube-nocookie.com/embed/{meta["video"]}?rel=0" '
@@ -92,7 +91,6 @@ def build(meta, blocks):
             cls = ' class="bca-post__lead"' if first_para else ""
             out.append(f"<p{cls}>{esc(b)}</p>")
             first_para = False
-    out.append('<p class="bca-post__byline">Written by <strong>Samantha Martinez</strong>, Best of the City Awards</p>')
     out.append("</div>")
     return "\n".join(out) + "\n"
 

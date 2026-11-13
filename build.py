@@ -103,4 +103,6 @@ if __name__ == "__main__":
     ap.add_argument("--preview-out", default=str(PREVIEW))
     a = ap.parse_args()
     build_dist(cfg["asset_base"])
+    import subprocess, sys
+    subprocess.run([sys.executable, str(ROOT / "spotlights" / "build_posts.py")], check=True)  # spotlight post bodies
     build_preview(a.preview_base, pathlib.Path(a.preview_out))

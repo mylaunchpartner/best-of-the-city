@@ -3,6 +3,28 @@
 <style>
 html,body{overflow-x:hidden}
 .bca-bleed{width:100vw;position:relative;left:50%;margin-left:-50vw}
+/* GHL blog template: remove the builder's padding so our full-width blocks sit flush */
+.c-section,.c-row,.c-column{padding-top:0!important;padding-bottom:0!important}
+/* Dynamic spotlight cards (GHL blog list) */
+.c-section{background:#FBF8F2}
+.blog-post-wrapper{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:36px 32px!important;max-width:1152px;margin:0 auto!important;padding:88px 0 24px!important;font-family:'Montserrat',system-ui,sans-serif}
+.blog-post-wrapper-list,.blog-post-wrapper-wrapper{width:auto!important;max-width:none!important;flex:none!important;margin:0!important;padding:0!important}
+.blog-box{background:#fff;border:1px solid #E3D9C7;height:100%;display:flex;flex-direction:column;overflow:hidden;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+.blog-box:hover{border-color:#C49A55;transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(21,21,21,.35)}
+.blog-box .blog-image img{width:100%!important;height:auto!important;aspect-ratio:16/10;object-fit:cover;border-radius:0!important;display:block;margin:0!important}
+.blog-box .standard-blog-content{padding:24px 26px 28px!important;display:flex;flex-direction:column;flex:1}
+.blog-box .blog-title{font-family:'Libre Baskerville',Georgia,serif!important;font-size:21px!important;line-height:1.38!important;font-weight:400!important;text-transform:none!important;color:#151515!important;margin:0 0 10px!important;letter-spacing:0!important}
+.blog-box .blog-title a{color:inherit!important;text-decoration:none!important}
+.blog-box .blog-author-image{display:none!important}
+.blog-box .blog-author,.blog-box .blog-publish-date{font-family:'Montserrat',system-ui,sans-serif!important;font-size:10.5px!important;font-weight:600!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#835E1E!important}
+.blog-box .blog-description{font-family:'Montserrat',system-ui,sans-serif!important;font-size:15px!important;line-height:1.65!important;color:#5A534B!important;text-transform:none!important;margin:14px 0 18px!important}
+.blog-box .blog-tag{display:none!important}
+.blog-box .blog-button{margin-top:auto;font-family:'Montserrat',system-ui,sans-serif!important;font-size:12px!important;font-weight:600!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:#151515!important;text-decoration:none!important}
+.blog-box .blog-button:hover{color:#835E1E!important}
+.pagination-container{font-family:'Montserrat',system-ui,sans-serif}
+.pagination-container .pagination-button{border:1px solid #E3D9C7!important;border-radius:2px!important;background:#fff!important;color:#151515!important;font-size:12px!important;letter-spacing:.1em;text-transform:uppercase}
+.pagination-container .pagination-button[disabled]{opacity:.45}
+@media(max-width:700px){.blog-post-wrapper{padding:56px 20px 16px!important;gap:24px!important}}
 </style>
 <div class="bca-bleed">
 {{HEADER}}
