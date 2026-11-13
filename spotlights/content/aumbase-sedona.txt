@@ -7,7 +7,7 @@ location: Sedona, Arizona
 category: Wellness & Yoga
 people: Valerie Sanjali Irons, Founder
 date: 2026-04-08
-video:
+video: MffzASvZYaE
 cover: aumbase-sedona.jpg
 alt: Small group yoga class at sunset on the red rocks near the Sedona Airport Vortex
 meta: Aumbase Sedona brings yoga, sound healing and breathwork to Sedona's red rocks. Our Best of the City Awards spotlight on founder Valerie Sanjali Irons.
